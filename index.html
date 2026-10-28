@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Фокус — лаборатория взгляда</title>
+<meta name="description" content="Учебное исследование по нейромаркетингу: сайт следит за взглядом через веб-камеру и показывает, что в рекламе привлекает внимание.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Навигация -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="logo" href="#top" aria-label="Фокус — в начало">
+      <span class="logo-mark" aria-hidden="true"><span></span></span>
+      Фокус
+    </a>
+    <nav class="nav-links" aria-label="Разделы">
+      <a href="#how">Как это работает</a>
+      <a href="#privacy">Приватность</a>
+      <a href="#lab">Тест</a>
+    </nav>
+    <a class="btn btn-small" href="#lab">Начать</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- 1. Обложка -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow anim-in" style="--d:0">Исследование по нейромаркетингу</p>
+        <h1 class="anim-in" style="--d:1">Посмотрите.<br><span class="grad">Мы увидим, куда.</span></h1>
+        <p class="lead anim-in" style="--d:2">Мы тестируем сайт, который следит за взглядом через обычную веб-камеру. Полистайте ленту, как обычно в интернете, — а сайт покажет, куда вы смотрели.</p>
+        <div class="hero-actions anim-in" style="--d:3">
+          <a class="btn" href="#lab">Пройти тест</a>
+          <a class="btn btn-ghost" href="#how">Как это работает</a>
+        </div>
+        <dl class="author anim-in" style="--d:4">
+          <div><dt>Сайт создал</dt><dd id="author-name">Ахметов Теип</dd></div>
+          <div><dt>Время</dt><dd>≈ 3 минуты</dd></div>
+          <div><dt>Нужно</dt><dd>Компьютер с веб-камерой</dd></div>
+        </dl>
+      </div>
+
+      <div class="hero-visual anim-in" style="--d:2" aria-hidden="true">
+        <div class="device">
+          <div class="device-bar"><i></i><i></i><i></i><span>focus.lab / live</span></div>
+          <div class="device-screen">
+            <img src="ads/f4.png" alt="">
+            <canvas id="hero-canvas"></canvas>
+          </div>
+          <div class="device-foot">
+            <span class="live-dot"></span> Отслеживание взгляда
+            <span class="device-meta" id="hero-meta">fix 0.00 с</span>
+          </div>
+        </div>
+        <div class="legend-chip"><span class="dot red"></span>фиксация <span class="dot blue"></span>быстрый взгляд</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Легенда и шаги -->
+  <section class="section soft" id="how">
+    <div class="wrap">
+      <p class="eyebrow reveal">Как это работает</p>
+      <h2 class="reveal">Три шага. Никаких правильных ответов.</h2>
+      <p class="sub reveal">Мы проверяем, как работает сайт, а не вас. Просто смотрите на экран так, как смотрели бы на любую страницу в интернете.</p>
+
+      <ol class="steps">
+        <li class="step reveal">
+          <span class="step-num">1</span>
+          <div class="step-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="6"/><circle cx="24" cy="24" r="15" fill="none"/><path d="M24 3v6M24 39v6M3 24h6M39 24h6" fill="none"/></svg>
+          </div>
+          <h3>Настройка</h3>
+          <p>Разрешите доступ к камере и кликните по 9 точкам на экране, глядя на каждую. Так сайт учится понимать ваш взгляд.</p>
+        </li>
+        <li class="step reveal">
+          <span class="step-num">2</span>
+          <div class="step-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><rect x="10" y="6" width="28" height="36" rx="5" fill="none"/><path d="M16 16h16M16 23h10" fill="none"/><path d="M4 24l4-4M4 24l4 4M44 24l-4-4M44 24l-4 4" fill="none"/></svg>
+          </div>
+          <h3>Листание</h3>
+          <p>Пролистайте ленту из 8 рекламных постов стрелками. Смотрите на каждый столько, сколько хочется.</p>
+        </li>
+        <li class="step reveal">
+          <span class="step-num">3</span>
+          <div class="step-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><path d="M8 40V22M20 40V10M32 40V28M44 40H4" fill="none"/></svg>
+          </div>
+          <h3>Результаты</h3>
+          <p>Увидите карту своего взгляда, впишите имя, возраст и почту и отправьте результаты исследователям.</p>
+        </li>
+      </ol>
+
+      <div class="stats reveal">
+        <div><b data-count="8">8</b><span>рекламных постов</span></div>
+        <div><b data-count="9">9</b><span>точек настройки</span></div>
+        <div><b data-count="15">15</b><span>секунд максимум на пост</span></div>
+        <div><b data-count="3">3</b><span>минуты на весь тест</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Приватность -->
+  <section class="section" id="privacy">
+    <div class="wrap privacy">
+      <div class="privacy-copy">
+        <p class="eyebrow reveal">Приватность</p>
+        <h2 class="reveal">Камера видит вас.<br>Мы — нет.</h2>
+        <p class="sub reveal">Видео обрабатывается прямо в вашем браузере и никуда не отправляется. Мы сохраняем только координаты взгляда на рекламе и то, что вы сами впишете в конце.</p>
+      </div>
+      <ul class="privacy-list reveal">
+        <li><span class="check" aria-hidden="true"></span>Видео с камеры не записывается</li>
+        <li><span class="check" aria-hidden="true"></span>Фото лица не сохраняются</li>
+        <li><span class="check" aria-hidden="true"></span>Камера выключается после теста</li>
+        <li><span class="check" aria-hidden="true"></span>Отправка результатов — только по вашей кнопке</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 3. Лаборатория -->
+  <section class="section soft" id="lab">
+    <div class="wrap">
+      <p class="eyebrow reveal">Тест</p>
+      <h2 class="reveal">Лаборатория взгляда</h2>
+
+      <div class="stage" id="stage">
+
+        <!-- Шаг: подготовка -->
+        <div class="pane" data-pane="intro">
+          <div class="pane-grid">
+            <div>
+              <h3 class="pane-title">Перед началом</h3>
+              <ul class="checklist">
+                <li><b>Свет спереди.</b> Лицо хорошо освещено, окно не за спиной.</li>
+                <li><b>50–70 см до экрана.</b> Сядьте ровно, лицо по центру камеры.</li>
+                <li><b>Голова неподвижна.</b> Двигайте только глазами.</li>
+                <li><b>Очки можно,</b> но без бликов.</li>
+              </ul>
+              <div class="pane-actions">
+                <button class="btn" id="btn-camera" type="button">Включить камеру</button>
+                <button class="btn btn-ghost" id="btn-demo" type="button">Демо без камеры</button>
+              </div>
+              <p class="fine">Демо-режим использует курсор мыши вместо взгляда. Он нужен, чтобы посмотреть, как всё устроено. Такие результаты помечаются как «демо».</p>
+              <p class="error" id="camera-error" hidden></p>
+            </div>
+            <div class="intro-art" aria-hidden="true">
+              <div class="face-frame"><span></span><span></span><span></span><span></span>
+                <svg viewBox="0 0 120 140"><ellipse cx="60" cy="66" rx="38" ry="48" fill="none"/><circle cx="46" cy="60" r="4"/><circle cx="74" cy="60" r="4"/><path d="M48 92q12 8 24 0" fill="none"/></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Шаг: проверка лица -->
+        <div class="pane" data-pane="camera" hidden>
+          <div class="pane-grid">
+            <div>
+              <h3 class="pane-title">Найдите своё лицо</h3>
+              <p class="sub">Окно с камерой появилось в левом верхнем углу. Когда лицо окажется внутри рамки и рамка станет зелёной, нажмите «Дальше».</p>
+              <div class="status-row"><span class="spinner" id="cam-spinner"></span><span id="cam-status">Загружаем модель распознавания лица…</span><span class="cam-time" id="cam-time">0 с</span></div>
+              <p class="fine" id="cam-hint" hidden></p>
+              <div class="pane-actions">
+                <button class="btn btn-ghost" id="btn-retry" type="button" hidden>Попробовать ещё раз</button>
+                <button class="btn" id="btn-to-calib" type="button" disabled>Дальше: настройка</button>
+                <button class="btn btn-ghost" id="btn-cancel" type="button">Отмена</button>
+              </div>
+            </div>
+            <div class="cam-hint" aria-hidden="true">
+              <div class="arrow-up-left"></div>
+              <p>Окно камеры здесь ↖</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Шаг: результаты -->
+        <div class="pane" data-pane="results" hidden>
+          <div class="results-head">
+            <div>
+              <h3 class="pane-title">Ваша карта взгляда</h3>
+              <p class="sub">Красные круги — места, где взгляд задерживался (чем больше круг, тем дольше). Синие точки — быстрые взгляды.</p>
+            </div>
+            <div class="badge" id="accuracy-badge">Точность —</div>
+          </div>
+
+          <div class="summary" id="summary"></div>
+          <div class="maps" id="maps"></div>
+
+          <form class="form" id="form" novalidate>
+            <h3 class="pane-title">Отправить результаты</h3>
+            <div class="fields">
+              <label class="field"><span>Имя</span><input id="f-name" name="name" type="text" autocomplete="given-name" required placeholder="Анна"></label>
+              <label class="field"><span>Возраст</span><input id="f-age" name="age" type="number" min="10" max="99" inputmode="numeric" required placeholder="21"></label>
+              <label class="field"><span>Почта</span><input id="f-email" name="email" type="email" autocomplete="email" required placeholder="anna@example.com"></label>
+            </div>
+            <label class="consent"><input id="f-consent" type="checkbox" required><span>Согласен(на), что мои ответы и данные о взгляде используются в учебном исследовании.</span></label>
+            <div class="pane-actions">
+              <button class="btn" id="btn-send" type="submit">Отправить результаты</button>
+              <button class="btn btn-ghost" id="btn-restart" type="button">Пройти заново</button>
+            </div>
+            <p class="form-status" id="form-status" role="status"></p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <span>Фокус · учебный проект по нейромаркетингу · © Ахметов Теип</span>
+    <span>По мотивам Pieters &amp; Wedel (2004), Journal of Marketing. Отслеживание взгляда: WebGazer.js (Brown University, GPLv3).</span>
+  </div>
+</footer>
+
+<!-- Полноэкранные режимы: калибровка и лента -->
+<div class="overlay" id="calib" hidden>
+  <div class="calib-help" id="calib-help">
+    <b>Настройка</b>
+    <span id="calib-text">Смотрите на точку и кликните по ней 5 раз. Точка станет синей.</span>
+  </div>
+  <div class="calib-points" id="calib-points"></div>
+</div>
+
+<div class="overlay feed" id="feed" hidden>
+  <div class="feed-top">
+    <div class="feed-progress" id="feed-progress"></div>
+    <div class="feed-timer"><i id="feed-timer-bar"></i></div>
+  </div>
+  <button class="feed-arrow left" id="feed-prev" type="button" aria-label="Предыдущий пост">
+    <svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" fill="none"/></svg>
+  </button>
+  <figure class="feed-card"><img id="feed-img" alt="Рекламный пост"></figure>
+  <button class="feed-arrow right" id="feed-next" type="button" aria-label="Следующий пост">
+    <svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" fill="none"/></svg>
+  </button>
+  <p class="feed-hint">Листайте стрелками на экране или на клавиатуре</p>
+</div>
+
+<script src="lib/webgazer.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
